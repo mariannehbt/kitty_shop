@@ -7,4 +7,10 @@ class User < ApplicationRecord
   has_one :cart, foreign_key: 'user_id'
   has_many :orders, foreign_key: 'user_id'
 
+  after_create :welcome_send
+
+  def welcome_send
+  	UserMailer.welcome_email(self).deliver_now
+  end
+
 end
