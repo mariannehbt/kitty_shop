@@ -8,9 +8,10 @@ Rails.application.routes.draw do
 
   get 'static_pages/index'
   get 'static_pages/secret'
+  get 'pay_form', to: 'static_pages#pay_form'
 
   resources :items
   resources :carts
   resources :orders
-  
+
 end

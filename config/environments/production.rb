@@ -64,7 +64,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "kitty_shop_#{Rails.env}"
 
   # In production, :host should be set to the actual host of your application.
-  # CORRECT with Heroku : config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { :host => 'kitty_shop.herokuapp.com' }
 
   config.action_mailer.perform_caching = false
 

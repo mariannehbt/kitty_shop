@@ -7,4 +7,13 @@ class StaticPagesController < ApplicationController
 
   def secret
   end
+
+  def pay_form
+      Stripe.api_key = 'sk_test_2zBjaF61cnAze1NjvkRw4ADH00dcldeKWO'
+
+  @intent = Stripe::PaymentIntent.create({
+      amount: 1099,
+      currency: 'eur',
+  })
+  end
 end
