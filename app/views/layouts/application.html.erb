@@ -5,15 +5,32 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css" media="screen">
+      <link rel="stylesheet" href="app/assets/stylesheets/main.css">
+
+          <!--**********JavaScript **********-->
+   
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     
-    <p class="notice"><%= notice %></p>
+    <%= render 'layouts/header' %>
     <p class="alert"><%= alert %></p>
     
-    <%= yield %>
+    
+
+
+
+      <script src="vendor/assets/javascripts/popper.min.js"></script>
+      <script src="vendor/assets/javascripts/jquery-3.3.1.slim.min.js"></script>
+      <script src="vendor/assets/javascripts/bootstrap.min.js"></script>
+      <%= yield %>
+
   </body>
+
+
+
 </html>
