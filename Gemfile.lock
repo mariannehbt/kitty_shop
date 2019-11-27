@@ -186,6 +186,10 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    stripe (5.11.0)
+    stripe_event (2.3.0)
+      activesupport (>= 3.1)
+      stripe (>= 2.8, < 6)
     table_print (1.5.6)
     thor (0.20.3)
     thread_safe (0.3.6)
@@ -232,6 +236,8 @@ DEPENDENCIES
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
+  stripe
+  stripe_event
   table_print
   turbolinks (~> 5)
   tzinfo-data
