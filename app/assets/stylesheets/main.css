@@ -9,26 +9,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  color: #fff;
+  color: #fff !important;
   background-color: #ef5912;
   border-color: #1a1a1a;
 }
 
+
+
 .btn-primary:hover {
-  color: #fff;
+  color: #fff !important;
   background-color: #d74f2c;
   border-color: #010000;
 }
 
 
 .btn-secondary {
-  color: #fff;
+  color: #fff !important;
   background-color: #F49D14;
   border-color: #1a1a1a;
 }
 
 .btn-secondary:hover {
-  color: #fff;
+  color: #fff !important;
   background-color: #F58F01;
   border-color: #e6e5e5;
 }
@@ -190,11 +192,5 @@ a.text-warning:hover, a.text-warning:focus {
   background-color: white;
   text-align: center;
   padding-top: 5em;
-}
-
-.card {
-        margin: 0 auto; /* Added */
-        float: none; /* Added */
-        margin-bottom: 10px; /* Added */
 }
 
