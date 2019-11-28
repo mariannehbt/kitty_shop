@@ -16,13 +16,7 @@ puts '*' * 60
 puts 'Wiping database'
 puts '*' * 60
 
-ActiveRecord::Base.establish_connection
-ActiveRecord::Base.connection.tables.each do |table|
-  # deletes all tables in DB except for the schema one
-  next if table == 'schema_migrations' || table == 'ar_internal_metadata'
-  ActiveRecord::Base.connection.execute("TRUNCATE #{table}")
-  ActiveRecord::Base.connection.reset_pk_sequence!(table)
-end
+
 
 puts '*' * 60
 puts 'Creating 10 Users'
