@@ -13,7 +13,14 @@
     <div class="card text-white bg-secondary mb-3 ml-3 mr-3" style="max-width: 20rem;">
       <!-- début de la 1ere card-->
       <div class="card-header"><%= item.title %></div>
-      <img class="card-img-top" src="<%= item.image_url %>" alt="Card image cap">
+
+   
+        <%if item.item_image.attached?%>
+        <%= image_tag item.item_image, alt: 'image du chat', :class => "card-img-top" %>
+        <%else%>
+        <p>No picture yet !</p>
+        <%end%>
+
       <div class="card-body">
         <p class="card-text"><center>
           <%= link_to 'Preview', item, :class => "btn btn-primary btn-sm" %>
