@@ -16,8 +16,6 @@ puts '*' * 60
 puts 'Wiping database'
 puts '*' * 60
 
-
-
 puts '*' * 60
 puts 'Creating 10 Users'
 puts '*' * 60
