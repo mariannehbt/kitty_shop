@@ -34,7 +34,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # ActionMailer x2 :
-  # config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.delivery_method = :letter_opener
   # perform_deliveries = false permet d'éteindre tout envoi d'email de la part de ton app Rails
   config.action_mailer.perform_deliveries = true
 
