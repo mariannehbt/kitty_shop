@@ -1,8 +1,8 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
 <p>
   <strong>Title:</strong>
-  <%= @item.title %>
+ <h1> <%= @item.title %> </h1>
 </p>
 
 <p>
@@ -17,8 +17,25 @@
 
 <p>
   <strong>Image url:</strong>
-  <%= @item.image_url %>
+  <%if @item.item_image.attached?%>
+  <%= image_tag @item.item_image, alt: 'image du chat', :class => "card-img-top" %>
+  <%else%>
+  <p>No picture yet !</p>
+  <%end%>
 </p>
+
+<!-- ONLY ADMIN -->
+<p>
+  <strong>Add/Edit Image ?</strong>
+  <%= form_tag item_items_images_path(@item), multipart: true do %>
+  <%= file_field_tag :item_image %>
+  <%= submit_tag "mettre à jour" %>
+  <% end %>
+</p>
+<!-- FIN ONLY ADMIN -->
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
+
+
+</div>

@@ -16,14 +16,6 @@ puts '*' * 60
 puts 'Wiping database'
 puts '*' * 60
 
-ActiveRecord::Base.establish_connection
-ActiveRecord::Base.connection.tables.each do |table|
-  # deletes all tables in DB except for the schema one
-  next if table == 'schema_migrations' || table == 'ar_internal_metadata'
-  ActiveRecord::Base.connection.execute("TRUNCATE #{table}")
-  ActiveRecord::Base.connection.reset_pk_sequence!(table)
-end
-
 puts '*' * 60
 puts 'Creating 10 Users'
 puts '*' * 60
@@ -44,7 +36,7 @@ puts '*' * 60
 		title: "Picture - #{index + 1}",
 		description: Faker::Lorem.sentence(word_count: 10),
 		price: rand(1..1000),
-		image_url: "image_url - #{index + 1}",
+		image_url: Rails.root.join("app/assets/images/cats/cat_card#{rand(1..12)}.jpg"),
 		)
 end
 
