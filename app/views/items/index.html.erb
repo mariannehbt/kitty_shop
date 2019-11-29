@@ -14,17 +14,20 @@
       <!-- début de la 1ere card-->
       <div class="card-header"><%= item.title %></div>
 
+        <%= image_tag("cats/#{item.image_url}", :class => "card-img-top")%>
    
-        <%if item.item_image.attached?%>
-        <%= image_tag item.item_image, alt: 'image du chat', :class => "card-img-top" %>
+        <!--  <%if item.image_url.attached?%>
+
+        <%= image_tag(item.item_image, alt: 'image du chat', :class => "card-img-top") %>
         <%else%>
         <p>No picture yet !</p>
         <%end%>
+        -->
 
       <div class="card-body">
         <p class="card-text"><center>
           <%= link_to 'Preview', item, :class => "btn btn-primary btn-sm" %>
-          <%= link_to 'Shop now', item, :class => "btn btn-primary btn-sm" %>
+          <%= link_to 'Shop now', carts_item_index_path(item_id: item), method: "create", :class => "btn btn-primary btn-sm" %>
       </div>
       <!-- fin de la première card -->
     </div>

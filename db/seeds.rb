@@ -38,7 +38,7 @@ puts '*' * 60
 		title: "Picture - #{index + 1}",
 		description: Faker::Lorem.sentence(word_count: 10),
 		price: rand(1..1000),
-		image_url: Rails.root.join("app/assets/images/cats/cat_card#{rand(1..12)}.jpg"),
+		image_url: "cat_card#{rand(1..12)}.jpg"
 		)
 end
 

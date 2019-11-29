@@ -11,6 +11,7 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
+    @cart_join = CartsItem.where(cart_id: set_cart.id)
   end
 
   # GET /carts/new
